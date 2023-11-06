@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GoogleLogin from "./GoogleLogin";
 
 
 const Register = () => {
@@ -98,7 +99,7 @@ const Register = () => {
 								Already have an account?<Link to="/login"> <span className="text-blue-500"> Login!</span> </Link>
 							</p>
 						</div>
-						
+						<GoogleLogin></GoogleLogin>
 					</form>
 				</div>
 			</div>
