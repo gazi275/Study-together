@@ -93,13 +93,14 @@ const Register = () => {
 								Forgot Password?
 							</a>
 						</div>
-						<div className="text-center">
+						<div className="text-center space-y-3">
 							<p className="inline-block text-sm text-black dark:text-blue-500 align-baseline hover:text-blue-800"
 								>
 								Already have an account?<Link to="/login"> <span className="text-blue-500"> Login!</span> </Link>
 							</p>
+                            <GoogleLogin></GoogleLogin>
 						</div>
-						<GoogleLogin></GoogleLogin>
+						
 					</form>
 				</div>
 			</div>

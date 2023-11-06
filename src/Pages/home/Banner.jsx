@@ -8,19 +8,19 @@ const Banner = () => {
     <div className="relative h-56 overflow-hidden rounded-lg md:h-[500px] lg:h-[550px] ">
          {/* {<!-- Item 1 -->} */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/6WXTxr4/pexels-ella-olsson-1640772.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/48dS2Dd/2c0832e9-d89f-441c-9613-2b7e1acecf17-adobestock-100210543.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
        {/* { <!-- Item 2 -->} */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/XynGcmN/shourav-sheikh-a66s-Gf-Onnq-Q-unsplash.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/qjyqsPf/20190909-supplemental-instruction-13.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
         {/* <!-- Item 3 --> */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/yR36ZyQ/brooke-lark-Hl-Ncigv-Ui4-Q-unsplash.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/tBFTbZR/download.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
         {/* <!-- Item 4 --> */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/SdY8J0d/pexels-cats-coming-2335692.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/G9x8sCs/four-students-sit-beside-each-other-study-13339-104050.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
        
     </div>
