@@ -10,6 +10,8 @@ import Root from './root/Root'
 import Contact from './Pages/About/Contact'
 import Login from './authentication/Login'
 import Register from './authentication/Register'
+import Assignments from './Pages/Assignments'
+import AuthProvider from './provider/AuthProvider'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
       {
         path:"/register",
         element:<Register></Register>
+      },
+      {
+        path:"/assignment",
+        element:<Assignments></Assignments>
       }
     ]
     },
@@ -44,6 +50,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
    <RouterProvider router={router} />
+   </AuthProvider>
   </React.StrictMode>,
 )
