@@ -121,14 +121,14 @@ const Register = () => {
 							</div>
 							<div className="md:ml-2">
 								<label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" for="c_password">
-                                    Confirm Password
+                                   Photo-Url
                                 </label>
 								<input
-                                   className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    id="c_password"
-                                    type="password"
-                                    placeholder="******************"
-									name="c_password"
+                                   className="w-full px-2 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                    id="photo"
+                                    type="text"
+                                    
+									name="photo"
                                 />
 							</div>
 						</div>

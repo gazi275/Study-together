@@ -2,7 +2,7 @@
 import Banner from "./Banner";
 import Faq from "./Faq";
 import Footer from "./Footer";
-import Nav from "./Nav";
+
 
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <Faq></Faq>
             <Footer></Footer>
-            <Nav></Nav>
+         
             
         </div>
     );

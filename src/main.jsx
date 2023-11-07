@@ -14,6 +14,7 @@ import Assignments from './Pages/Assignments'
 import AuthProvider from './provider/AuthProvider'
 import CreateAssignment from './Pages/CreateAssignment'
 import MyAssignment from './Pages/MyAssignment'
+import ErrorPage from './ErrorPage'
 
 
 
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    // errorElement: <ErrorPage />,
+     errorElement: <ErrorPage />,
     children: [
       {
         path:"/",
