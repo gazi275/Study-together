@@ -13,6 +13,9 @@ import Register from './authentication/Register'
 import Assignments from './Pages/Assignments'
 import AuthProvider from './provider/AuthProvider'
 
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",

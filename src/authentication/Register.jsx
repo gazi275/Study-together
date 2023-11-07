@@ -1,8 +1,57 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Register = () => {
+	const {  createUser } = useContext(AuthContext)
+    const navigate= useNavigate()
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // get field values 
+        
+		const firstname = e.target.firstName.value;
+		const lastname = e.target.lastName.value;
+        const email = e.target.email.value;
+
+        const password = e.target.password.value;
+        console.log(firstname,lastname, email, password);
+
+
+        // validation 
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password)) {
+            toast.error('Password must be at least 6 characters,Uppercase-letter and special characters');
+            return;
+        }
+
+
+        createUser(email, password)
+            .then(res => {
+                toast.success('you have registered  successfully Please Go to login');
+				Navigate('/login')
+                })
+              .catch(error => {
+                
+                toast.error("Please fil up your form correctly")
+            })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             
@@ -17,7 +66,7 @@ const Register = () => {
 			
 				<div className="w-full lg:w-7/12 bg-[#f5f5f5] dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
 					<h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">Create an Account!</h3>
-					<form  className="px-8 pt-6 pb-8 mb-4 bg- dark:bg-gray-800 rounded">
+					<form onSubmit={handleSubmit} className="px-8 pt-6 pb-8 mb-4 bg- dark:bg-gray-800 rounded">
 						<div className="mb-4 md:flex md:justify-between">
 							<div className="mb-4 md:mr-2 md:mb-0">
 								<label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" for="firstName">
@@ -28,6 +77,7 @@ const Register = () => {
                                     id="firstName"
                                     type="text"
                                     placeholder="First Name"
+									name="firstName"
                                 />
 							</div>
 							<div className="md:ml-2">
@@ -39,6 +89,7 @@ const Register = () => {
                                     id="lastName"
                                     type="text"
                                     placeholder="Last Name"
+									name="LastName"
                                 />
 							</div>
 						</div>
@@ -51,6 +102,7 @@ const Register = () => {
                                 id="email"
                                 type="email"
                                 placeholder="Email"
+								name="email"
                             />
 						</div>
 						<div className="mb-4 md:flex md:justify-between">
@@ -63,6 +115,7 @@ const Register = () => {
                                     id="password"
                                     type="password"
                                     placeholder="******************"
+									name="password"
                                 />
 								<p className="text-xs italic text-red-500">Please choose a password.</p>
 							</div>
@@ -75,6 +128,7 @@ const Register = () => {
                                     id="c_password"
                                     type="password"
                                     placeholder="******************"
+									name="c_password"
                                 />
 							</div>
 						</div>
