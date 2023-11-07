@@ -33,7 +33,7 @@ const Register = () => {
         createUser(email, password)
             .then(res => {
                 toast.success('you have registered  successfully Please Go to login');
-				Navigate('/login')
+				navigate('/login')
                 })
               .catch(error => {
                 

@@ -6,8 +6,8 @@ import toast from "react-hot-toast";
 
 const GoogleLogin = () => {
   const navigate = useNavigate()
-  const { user, googleLogin } = useContext(AuthContext);
-console.log(user);
+  const {  googleLogin } = useContext(AuthContext);
+
 
  const handleSocialLogin = () => {
      googleLogin()
