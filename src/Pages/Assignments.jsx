@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Assignments = () => {
@@ -15,10 +16,19 @@ const Assignments = () => {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
     </p>
   </div>
-  <div className="p-6 pt-0">
-    <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      Read More
+  <div className="p-6  pt-0 flex gap-2">
+    <Link to="/details">
+    <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-blue-500 py-3 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+      View Assignment
+    </button></Link>
+    <Link to="/update">
+    <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold  uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+      update Assignment
     </button>
+    </Link>
+
+    
+
   </div>
 </div>
         </div>

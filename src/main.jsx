@@ -15,6 +15,10 @@ import AuthProvider from './provider/AuthProvider'
 import CreateAssignment from './Pages/CreateAssignment'
 import MyAssignment from './Pages/MyAssignment'
 import ErrorPage from './ErrorPage'
+import Submission from './Pages/Submission'
+import Details from './Pages/Details'
+import Update from './Pages/Update'
+import PrivateRoute from './privateRoute/PrivateRoute'
 
 
 
@@ -52,6 +56,22 @@ const router = createBrowserRouter([
       {
         path:"/myAssignment",
         element:<MyAssignment></MyAssignment>
+      },
+      {
+        path:"/submission",
+        element:<Submission></Submission>
+      },
+      {
+        path:"/details",
+        element:<PrivateRoute>
+          <Details></Details>
+          </PrivateRoute>
+      },
+      {
+        path:"/update",
+        element:<PrivateRoute>
+          <Update></Update>
+          </PrivateRoute>
       }
     ]
     },
