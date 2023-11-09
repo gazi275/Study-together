@@ -76,11 +76,7 @@ const Animattion = () => {
     </p>
   </div>
 </section>
-
-
-
-
-        </div>
+  </div>
 
         </div>
     );

@@ -1,36 +1,22 @@
-import { Link } from "react-router-dom";
+import {  useLoaderData } from "react-router-dom";
+import AllAssignment from "./AllAssignment";
 
 
 const Assignments = () => {
+
+const assignments=useLoaderData();
+console.log(assignments);
+
+
+
+
     return (
         <div>
-            <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md mt-11">
-  <div className="relative mx-4 -mt-6  overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
-    <img src="https://i.ibb.co/48dS2Dd/2c0832e9-d89f-441c-9613-2b7e1acecf17-adobestock-100210543.jpg" alt="" className="h-96" />
-  </div>
-  <div className="p-6">
-    <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-     Tailwind card
-    </h5>
-    <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
-    </p>
-  </div>
-  <div className="p-6  pt-0 flex gap-2">
-    <Link to="/details">
-    <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-blue-500 py-3 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      View Assignment
-    </button></Link>
-    <Link to="/update">
-    <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold  uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      update Assignment
-    </button>
-    </Link>
-
-    
-
-  </div>
-</div>
+            <div className="grid grid-cols-1 gap-5 mx-auto  md:grid-cols-3 lg:grid-cols-4" style={{ backgroundImage: 'url("https://i.ibb.co/vhtY2fV/images-2.jpg")' }}>
+            {
+   assignments?.map(assignment=> <AllAssignment key={assignment.id} assignment={assignment}></AllAssignment>)
+}
+            </div>
         </div>
     );
 };

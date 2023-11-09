@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const Details = () => {
+
+    const details=useLoaderData()
+    console.log(details);
     return (
         <div>
           
@@ -11,7 +14,7 @@ const Details = () => {
                             <div
                                 className="h-48 md:h-56 lg:h-[24rem] w-full bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden relative">
 
-                                <img src="https://pixahive.com/wp-content/uploads/2020/10/Gym-shoes-153180-pixahive.jpg"
+                                <img src={details.image}
                                     className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-400"
                                     alt=""/>
 
@@ -20,15 +23,20 @@ const Details = () => {
                                 </div>
 
                             </div>
-                            <a 
-                                className=" block text-black text-center hover:text-primary transition-colors duration-150 text-lg md:text-xl mb-1">
-                                Wild West Hoodie</a>
+                            <p 
+                                className=" block text-black text-center font-bold hover:text-primary transition-colors duration-150 text-lg md:text-xl mb-1">
+                               {details.title}</p>
+<div className="flex justify-around items-center"><p className="mb-1  font-semibold block text-black text-center hover:text-primary transition-colors duration-150 text-lg md:text-xl ">Number :{details.marks}</p>
+                            <p className="mb-1  font-semibold  block text-black text-center hover:text-primary transition-colors duration-150 text-lg md:text-xl ">Due DAte :{details.date}</p>
+</div>
+<p  className=" block text-black text-center font-semibold hover:text-primary transition-colors duration-150 text-lg md:text-xl mb-2 ">
+                             Created Assignment :  {details.email}</p>
 
+                             <p 
+                                className=" block text-black text-center font-normal  hover:text-primary transition-colors duration-150 text-lg md:text-xl mb-2">
+                               {details.description}</p>
 
-                            <p className="mb-4 font-light  text-sm md:text-sm text-center text-gray-400">Lorem ipsum dolor
-                                sit
-                                amet, consectetur adipisicing.</p>
-
+                            
                             <div className="flex justify-center gap-x-3">
                                 <Link to="/submission">
                                 <button

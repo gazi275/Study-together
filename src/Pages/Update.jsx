@@ -2,8 +2,46 @@ import { useState } from "react";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useParams } from "react-router-dom";
 
 const Update = () => {
+
+    const {id}=useParams();
+
+    console.log(id);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        
+       
+         const title = e.target.title.value;
+        const email = e.target.email.value;
+        const level = e.target.level.value;
+          const marks = e.target.marks.value;
+        const image = e.target.image.value;
+         const date = e.target.date.value;
+          const description = e.target.description.value;
+       
+
+       const assignment={title,email,level, marks,image,date ,description};
+        console.log(assignment);
+        
+        fetch(`http://localhost:5001/updatedassignment/${id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(assignment),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+            });
+      }
+
+
+
 
     const [startDate, setStartDate] = useState(new Date());
     return (
@@ -11,7 +49,7 @@ const Update = () => {
             <section className=" dark:bg-gray-900 " style={{ backgroundImage: 'url("https://i.ibb.co/tBvVpMm/images-1.jpg")' }}>
   <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
       <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Update An Assignment</h2>
-      <form >
+      <form onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
               <div className="sm:col-span-2">
                   <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
