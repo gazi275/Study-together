@@ -1,8 +1,11 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData ,useParams} from "react-router-dom";
 
 
 const Details = () => {
+  
 
+  const id  = useParams()
+  console.log(id);
     const details=useLoaderData()
     console.log(details);
     return (
@@ -38,7 +41,7 @@ const Details = () => {
 
                             
                             <div className="flex justify-center gap-x-3">
-                                <Link to="/submission">
+                                <Link to={`/submission/${details._id}`}>
                                 <button
                                     className=" px-5 py-2 border border-primary text-primary hover:bg-primary  transition-all outline-none bg-black border-black text-white hover:text-black hover:bg-white font-bold">
                                     Take Assignment</button></Link>

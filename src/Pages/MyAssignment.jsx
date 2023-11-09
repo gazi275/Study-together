@@ -1,11 +1,29 @@
+import { useLoaderData } from "react-router-dom";
+import Single from "./single";
 
 
-const MyAssignment = () => {
+const MysubmitAssignment = () => {
+
+const submitAssignment=useLoaderData();
+console.log(submitAssignment);
+
+
+
+
+
+
     return (
         <div>
-            <h2>asdfgdfzxb</h2>
+          <div>
+          <div className="grid grid-cols-1 gap-5 mx-auto  md:grid-cols-3 lg:grid-cols-4" style={{ backgroundImage: 'url("https://i.ibb.co/vhtY2fV/images-2.jpg")' }}>
+            {
+   submitAssignment?.map(single=> <Single key={single.id} single={single}></Single>)
+}
+            </div> 
+            </div>  
+
         </div>
     );
 };
 
-export default MyAssignment;
+export default MysubmitAssignment;
