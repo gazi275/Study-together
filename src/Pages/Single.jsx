@@ -2,7 +2,7 @@
 
 const Single = ({single}) => {
     return (
-        <div className="flex mt-5">
+        <div className="flex mt-5 mx-auto">
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" >
     <a href="#">
         <img className="rounded-t-lg w-full h-[250px]" src={single.image} alt="" />
